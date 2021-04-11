@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class Statetest {
 
+    /*
     @Test
     void greenStateTest(){
 
@@ -28,7 +29,7 @@ public class Statetest {
         TrafficLightColor expected = TrafficLightColor.YELLOW;
         assertEquals(expected,actual);
 
-    }
+    }*/
 
 
 

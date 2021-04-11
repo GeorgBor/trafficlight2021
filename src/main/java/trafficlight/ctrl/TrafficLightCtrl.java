@@ -5,6 +5,8 @@ import trafficlight.states.*;
 
 public class TrafficLightCtrl {
 
+    private static TrafficLightCtrl instance = null;
+
     private State greenState;
 
     private State redState;
@@ -18,14 +20,32 @@ public class TrafficLightCtrl {
     private TrafficLightGui gui;
 
 
-    public TrafficLightCtrl() {
+    /*public TrafficLightCtrl() {
         super();
         initStates();
         gui = new TrafficLightGui(this);
         gui.setVisible(true);
         gui.setLight(TrafficLightColor.RED);
 
+    }*/
+
+    private TrafficLightCtrl(){
+
+        initStates();
+        gui = new TrafficLightGui(this);
+        gui.setVisible(true);
+        gui.setLight(TrafficLightColor.RED);
+        gui.run();
+
     }
+    public static TrafficLightCtrl getInstance(){
+
+        if (instance == null){
+            instance = new TrafficLightCtrl();
+        }
+        return instance;
+    }
+
 
     private void initStates() {
         //TODO create the states and set current and previous state
@@ -75,4 +95,14 @@ public class TrafficLightCtrl {
         getCurrentState().nextState();
         gui.setLight(getCurrentState().getState());
     }
+
+    public static void main(String[] args) {
+
+        TrafficLightCtrl ctrl = TrafficLightCtrl.getInstance();
+        ctrl.nextState();
+
+
+    }
+
+
 }
