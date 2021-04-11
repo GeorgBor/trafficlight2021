@@ -11,18 +11,18 @@ public class RedState implements State {
 
     @Override
     public void nextState() {
-        if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
+        //if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
             ctrl.setCurrentState(ctrl.getYellowState());
-            ctrl.setPreviousState(this);
+            ctrl.setPreviousState(ctrl.getRedState());
             System.out.println("Rot --> Gelb");
 
-        }
-        if (ctrl.getPreviousState().equals(ctrl.getGreenState())){
+        //}
+        /*if (ctrl.getPreviousState().equals(ctrl.getGreenState())){
             ctrl.setCurrentState(ctrl.getGreenState());
             ctrl.setPreviousState(this);
             System.out.println("Rot --> Grün");
 
-        }
+        }*/
 
     }
 

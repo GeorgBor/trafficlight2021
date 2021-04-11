@@ -16,12 +16,12 @@ public class YellowState implements State {
 
         if (ctrl.getPreviousState().equals(ctrl.getRedState())){
             ctrl.setCurrentState(ctrl.getGreenState());
-            ctrl.setPreviousState(this);
+            ctrl.setPreviousState(ctrl.getYellowState());
             System.out.println("GELB --> GRÜN");
         }
         if (ctrl.getPreviousState().equals(ctrl.getGreenState())){
             ctrl.setCurrentState(ctrl.getRedState());
-            ctrl.setPreviousState(this);
+            ctrl.setPreviousState(ctrl.getYellowState());
             System.out.println("GELB --> ROT");
 
         }

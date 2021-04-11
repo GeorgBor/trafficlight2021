@@ -14,16 +14,16 @@ public class GreenState implements State {
     @Override
     public void nextState() {
 
-        if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
+        //if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
             ctrl.setCurrentState(ctrl.getYellowState());
-            ctrl.setPreviousState(this);
+            ctrl.setPreviousState(ctrl.getGreenState());
             System.out.println("Green --> Yellow");
-        }
-        if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
+        //}
+        /*if (ctrl.getPreviousState().equals(ctrl.getYellowState())){
             ctrl.setCurrentState(ctrl.getRedState());
             ctrl.setPreviousState(this);
             System.out.println("Yellow --> Red");
-        }
+        }*/
 
     }
 
